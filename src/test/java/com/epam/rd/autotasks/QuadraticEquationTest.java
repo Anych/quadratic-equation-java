@@ -10,6 +10,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.PrintStream;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
@@ -101,7 +102,7 @@ class QuadraticEquationTest {
     }
 
     private double[] parseRoots(final String input) {
-        Scanner scanner = new Scanner(input);
+        Scanner scanner = new Scanner(input).useLocale(Locale.CANADA);
         double[] roots = new double[]{scanner.nextDouble(), scanner.nextDouble()};
         if (roots[0] > roots[1]) {
             roots = new double[]{roots[1], roots[0]};
